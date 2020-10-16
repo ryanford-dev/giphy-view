@@ -1,65 +1,77 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
+import ShrinkWrap from '@/components/shrinkwrap'
+import DemoImg from '@/img/undraw_creative_draft.svg'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const MainContent = styled.div`
+	height: 100%;
+	width: 100%;
+	max-width: 56.25rem;
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	flex-grow: 1;
+	align-items: center;
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+	.content {
+		width: 100%;
+		height: auto;
+		margin-bottom: 3rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+		@media (min-width: 48rem) {
+			width: 50%;
+			margin-bottom: 0;
+			display: initial;
+		}
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+		& h1 {
+			font-size: 2rem;
+		}
+		& p {
+			max-width: 20rem;
+			margin-top: 1.5rem;
+			line-height: 1.1;
+		}
+	}
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+	@media (min-width: 48rem) {
+		height: calc(100vh - 4.0625rem);
+		max-height: 48rem;
+		padding: 0;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+`;
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+const ImgWrap = styled.div`
+	width: 100%;
+	height: auto;
+	max-width: 20rem;
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+	@media (min-width: 48rem) {
+		width: 50%;
+	}
+`;
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+const home = () => (
+	<MainContent>
+		<ShrinkWrap maxWidth="48rem">
+			<div className="content">
+				<h1>Search Giphy</h1>
+				<p>Find the perfect gif!</p>
+				<p>
+					Dolor minima numquam saepe in quasi amet? Explicabo quam illo expedita totam atque Quis veritatis rerum nam accusantium consequuntur. Molestias corrupti suscipit repellat voluptatum vero Tempora aliquid eveniet dolores nostrum sint corrupti. Odit ea voluptatem a vitae qui doloremque Hic facilis nesciunt maiores at assumenda Quia aut quasi deserunt tempora?
+				</p>
+			</div>
+			<ImgWrap>
+				<DemoImg viewBox="0 0 858.081 750.015" width="100%" height="auto" />
+			</ImgWrap>
+		</ShrinkWrap>
+	</MainContent>
+)
+
+export default home;
