@@ -93,7 +93,7 @@ const ResultsPage = props => {
 				<div className="info">
 					<h2>Found {count} {`"${props.q}"`} gifs</h2>
 					{(count > 0) ? (
-						<p>Displaying {(page - 1) * 10} - {Math.min(count, page * 10)}</p>
+						<p>Displaying {(page - 1) * 10 + 1} - {Math.min(count, page * 10)}</p>
 					) : null}
 				</div>
 				<ImgGallery>
