@@ -79,7 +79,6 @@ const NavSearch = styled.form`
 const Navbar = props => {
 	const router = useRouter();
 	const [query, setQuery] = useState("");
-	const [data, setData] = useState({});
 
 	return (
 		<NavbarNav props={props}>
@@ -100,8 +99,6 @@ const Navbar = props => {
 							e.preventDefault();
 							if (!query) return;
 							// fake request
-							const result = await import('../public/sample_data.json')
-							setData(result.data);
 							router.push('/gifs/' + query);
 						}}
 					>
